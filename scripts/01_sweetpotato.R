@@ -1,4 +1,3 @@
-library("ClimMobTools")
 library("gosset")
 library("PlackettLuce")
 library("psychotools")
@@ -15,41 +14,7 @@ library("ggplot2")
 library("sf")
 
 capture.output(sessioninfo::session_info(),
-               file = "scripts/sessioninfo/sweetpotato_session_info.txt")
-
-# key <- "8f8d8a38-f3ce-432f-8c69-80cacd577cfd"
-# 
-# 
-# ids <- c("RTBTOLON", "RTBKUM", "RTBKARAGA", "RTBGUSHEGU", "RTBNANTON", "RTBKUM",
-#          "TRICOT", "RTBEM", 
-#          "TRICOTSAVANNA",
-#           "TRICOTUER", 
-#          "TRICOTCR", 
-#          "TRICOTEASTERN", "TRICOTMFANTSEMAN",
-#          "TRICOTVOLTA")
-# 
-# region <- c(rep("Northern Region", 6), rep("North East Region", 2), 
-#             "Savannah Region", "Upper East Region", rep("Central Region", 2), 
-#             "Eastern Region", "Volta Region")
-# 
-# 
-# region2 <- c(rep("North", 10), rep("South", 4))
-# 
-# length(ids) == length(region) & length(region) == length(region2)
-# lt <- list()
-# quest <- data.frame()
-# 
-# for(i in seq_along(ids)) {
-#   x <- getDataCM(key, project = ids[[i]], as.data.frame = FALSE)
-#   x <- as.data.frame(x, pivot.wider = TRUE, tidynames = TRUE)
-#   names(x) <- gsub("tasting|tasteevaluation", "consumerevaluation", names(x))
-#   names(x) <- gsub("harvestdata", "dataatharvest", names(x))
-#   x[,"registration_location"] <- region[[i]]
-#   x$region <- region2[[i]]
-#   lt[[i]] <- x
-# }
-# 
-# save(lt, quest, file = "dev/data/spotato_ghana.rda")
+               file = "scripts/sessioninfo/01_sweetpotato_session_info.txt")
 
 load("data/spotato_ghana.rda")
 
@@ -264,36 +229,40 @@ geoext$node <- with(geoext,
 
 summary(as.factor(geoext$node))
 
-
 plot(geoext[,c("x", "y")], col = geoext$node)
 
 
-# create spatial points data frame
-r <- geoext[,c("x", "y", "node")]
-head(r)
-coordinates(r) <- ~ x + y
-gridded(r) <- TRUE
-# coerce to raster
-r <- raster(r)
-r
+geoext <- merge(geoext, best3, by = "node", all.y = TRUE)
 
 
-s <- rasterToPolygons(r, dissolve = TRUE)
-s <- st_as_sf(s)
+write.csv(geoext, "processing/sweetpotato_geo_extrapolation.csv", row.names = FALSE)
 
-
-colors <- c("#2c7bb6", "#fee090", "#d73027")
-
-ggplot(s) + 
-  geom_sf(aes(fill = factor(node, levels = c("2","4","5"))),
-          lwd = 0) +
-  scale_fill_manual(values= colors,
-                    name = NULL,
-                    labels = best3$rules) +
-  theme_void() +
-  theme(legend.position = "right",
-        legend.title = element_blank(),
-        legend.text= element_text(size = 8, colour="black"))
-
-
-
+# # create spatial points data frame
+# r <- geoext[,c("x", "y", "node")]
+# head(r)
+# coordinates(r) <- ~ x + y
+# gridded(r) <- TRUE
+# # coerce to raster
+# r <- raster(r)
+# r
+# 
+# 
+# s <- rasterToPolygons(r, dissolve = TRUE)
+# s <- st_as_sf(s)
+# 
+# 
+# colors <- c("#2c7bb6", "#fee090", "#d73027")
+# 
+# ggplot(s) + 
+#   geom_sf(aes(fill = factor(node, levels = c("2","4","5"))),
+#           lwd = 0) +
+#   scale_fill_manual(values= colors,
+#                     name = NULL,
+#                     labels = best3$rules) +
+#   theme_void() +
+#   theme(legend.position = "right",
+#         legend.title = element_blank(),
+#         legend.text= element_text(size = 8, colour="black"))
+# 
+# 
+# 
