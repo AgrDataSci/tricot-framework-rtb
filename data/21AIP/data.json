@@ -1,0 +1,387 @@
+{
+    "Characteristics": [
+        {
+            "name": "Plant vigour",
+            "codeQst": "PlantVigour",
+            "id": 247,
+            "vars": [
+                {
+                    "name": "ASS2aed013bf061_char_plantvigour_pos"
+                },
+                {
+                    "name": "ASS2aed013bf061_char_plantvigour_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2aed013bf061",
+                "ass_desc": "Vegetative 1 (Day 45)",
+                "ass_days": 50,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which is the best growing variety?",
+                "Which is the worst growing variety?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2aed013bf061_247_add"
+        },
+        {
+            "name": "Bacterial wilt damage",
+            "codeQst": "Bacterialwilt",
+            "id": 248,
+            "vars": [
+                {
+                    "name": "ASS2aed013bf061_char_bacterialwilt_pos"
+                },
+                {
+                    "name": "ASS2aed013bf061_char_bacterialwilt_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2aed013bf061",
+                "ass_desc": "Vegetative 1 (Day 45)",
+                "ass_days": 50,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety shows the least damage from bacterial wilt?",
+                "Which variety shows the most damage from bacterial wilt?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2aed013bf061_248_add"
+        },
+        {
+            "name": "Disease and insect damage",
+            "codeQst": "DiseaseInsect",
+            "id": 249,
+            "vars": [
+                {
+                    "name": "ASS2aed013bf061_char_diseaseinsect_pos"
+                },
+                {
+                    "name": "ASS2aed013bf061_char_diseaseinsect_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2aed013bf061",
+                "ass_desc": "Vegetative 1 (Day 45)",
+                "ass_days": 50,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety shows the least damage from other diseases or pests?",
+                "Which variety shows the most damage from other diseases or pests?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2aed013bf061_249_add"
+        },
+        {
+            "name": "Bacterial wilt damage",
+            "codeQst": "Bacterialwilt",
+            "id": 248,
+            "vars": [
+                {
+                    "name": "ASS0d5d599fddb3_char_bacterialwilt_pos"
+                },
+                {
+                    "name": "ASS0d5d599fddb3_char_bacterialwilt_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "0d5d599fddb3",
+                "ass_desc": "Vegetative 2 (75 days)",
+                "ass_days": 80,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety shows the least damage from bacterial wilt?",
+                "Which variety shows the most damage from bacterial wilt?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_0d5d599fddb3_248_add"
+        },
+        {
+            "name": "Disease and insect damage",
+            "codeQst": "DiseaseInsect",
+            "id": 249,
+            "vars": [
+                {
+                    "name": "ASS0d5d599fddb3_char_diseaseinsect_pos"
+                },
+                {
+                    "name": "ASS0d5d599fddb3_char_diseaseinsect_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "0d5d599fddb3",
+                "ass_desc": "Vegetative 2 (75 days)",
+                "ass_days": 80,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety shows the least damage from other diseases or pests?",
+                "Which variety shows the most damage from other diseases or pests?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_0d5d599fddb3_249_add"
+        },
+        {
+            "name": "Maturity",
+            "codeQst": "Maturity",
+            "id": 250,
+            "vars": [
+                {
+                    "name": "ASS2e47a9554c06_char_maturity_pos"
+                },
+                {
+                    "name": "ASS2e47a9554c06_char_maturity_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2e47a9554c06",
+                "ass_desc": "Post-harvest 1 (5 days after harvest)",
+                "ass_days": 120,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety is ready for harvesting the quickest?",
+                "Which variety is ready for harvesting the slowest?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2e47a9554c06_250_add"
+        },
+        {
+            "name": "Yield",
+            "codeQst": "Yield",
+            "id": 253,
+            "vars": [
+                {
+                    "name": "ASS2e47a9554c06_char_yield_pos"
+                },
+                {
+                    "name": "ASS2e47a9554c06_char_yield_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2e47a9554c06",
+                "ass_desc": "Post-harvest 1 (5 days after harvest)",
+                "ass_days": 120,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety gives the best yield?",
+                "Which variety gives the worst yield?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2e47a9554c06_253_add"
+        },
+        {
+            "name": "Tuber size",
+            "codeQst": "TuberSize",
+            "id": 252,
+            "vars": [
+                {
+                    "name": "ASS2e47a9554c06_char_tubersize_pos"
+                },
+                {
+                    "name": "ASS2e47a9554c06_char_tubersize_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2e47a9554c06",
+                "ass_desc": "Post-harvest 1 (5 days after harvest)",
+                "ass_days": 120,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety produces the largest tubers?",
+                "Which variety produces the smallest tubers?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2e47a9554c06_252_add"
+        },
+        {
+            "name": "Tuber appearance",
+            "codeQst": "TuberAppearance",
+            "id": 251,
+            "vars": [
+                {
+                    "name": "ASS2e47a9554c06_char_tuberappearance_pos"
+                },
+                {
+                    "name": "ASS2e47a9554c06_char_tuberappearance_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2e47a9554c06",
+                "ass_desc": "Post-harvest 1 (5 days after harvest)",
+                "ass_days": 120,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety has the best appearing tubers?",
+                "Which variety has the worst appearing tubers?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2e47a9554c06_251_add"
+        },
+        {
+            "name": "Marketability at harvest",
+            "codeQst": "MarketableAtHarv",
+            "id": 254,
+            "vars": [
+                {
+                    "name": "ASS2e47a9554c06_char_marketableatharv_pos"
+                },
+                {
+                    "name": "ASS2e47a9554c06_char_marketableatharv_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2e47a9554c06",
+                "ass_desc": "Post-harvest 1 (5 days after harvest)",
+                "ass_days": 120,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety is the easiest to sell at harvest?",
+                "Which variety is the most difficult to sell at harvest?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2e47a9554c06_254_add"
+        },
+        {
+            "name": "Taste",
+            "codeQst": "Taste",
+            "id": 255,
+            "vars": [
+                {
+                    "name": "ASS2e47a9554c06_char_taste_pos"
+                },
+                {
+                    "name": "ASS2e47a9554c06_char_taste_neg"
+                }
+            ],
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2e47a9554c06",
+                "ass_desc": "Post-harvest 1 (5 days after harvest)",
+                "ass_days": 120,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "questionAsked": [
+                "Which variety tastes best after cooking?",
+                "Which variety tastes worst after cooking?"
+            ],
+            "type": "characteristic",
+            "codeForAnalysis": "characteristic_ASS_2e47a9554c06_255_add"
+        }
+    ],
+    "Performance": [],
+    "Explanatory": [
+        {
+            "name": "Trial success til harvest",
+            "codeQst": "TrialSuccess",
+            "questionAsked": "Did the trial continue until this time?",
+            "id": 265,
+            "vars": "ASS2aed013bf061_trialsuccess",
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2aed013bf061",
+                "ass_desc": "Vegetative 1 (Day 45)",
+                "ass_days": 50,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "type": "explanatory",
+            "codeForAnalysis": "explanatory_ASS_2aed013bf061_265_add"
+        },
+        {
+            "name": "Trial success til harvest",
+            "codeQst": "TrialSuccess",
+            "questionAsked": "Did the trial continue until this time?",
+            "id": 265,
+            "vars": "ASS0d5d599fddb3_trialsuccess",
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "0d5d599fddb3",
+                "ass_desc": "Vegetative 2 (75 days)",
+                "ass_days": 80,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "type": "explanatory",
+            "codeForAnalysis": "explanatory_ASS_0d5d599fddb3_265_add"
+        },
+        {
+            "name": "Trial success til harvest",
+            "codeQst": "TrialSuccess",
+            "questionAsked": "Did the trial continue until this time?",
+            "id": 265,
+            "vars": "ASS2e47a9554c06_trialsuccess",
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2e47a9554c06",
+                "ass_desc": "Post-harvest 1 (5 days after harvest)",
+                "ass_days": 120,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "type": "explanatory",
+            "codeForAnalysis": "explanatory_ASS_2e47a9554c06_265_add"
+        },
+        {
+            "name": "Observable tubers post-harvest",
+            "codeQst": "TubersToObserve",
+            "questionAsked": "Does farmer still have enough tubers of the 3 varieties to enable comparison?",
+            "id": 266,
+            "vars": "ASS2e47a9554c06_tuberstoobserve",
+            "code": {
+                "user_name": "jamesellison",
+                "project_cod": "21AIP",
+                "ass_cod": "2e47a9554c06",
+                "ass_desc": "Post-harvest 1 (5 days after harvest)",
+                "ass_days": 120,
+                "ass_status": 1,
+                "ass_final": 0
+            },
+            "type": "explanatory",
+            "codeForAnalysis": "explanatory_ASS_2e47a9554c06_266_add"
+        }
+    ]
+}
