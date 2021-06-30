@@ -71,25 +71,13 @@ names(f[[2]])
 
 dt1 <- f[[1]]
 
-names(dt1)
-
-# find the lon lat with more complete data
-lon <- which(grepl("_longitude", names(dt1)))
-
-unlist(lapply(dt1[lon], function(x){
-  sum(is.na(x))
-}))
-# this file does not have lon lat data thus cannot be used
-
-# go to the other file
-dt1 <- f[[2]]
-
+# select the variables in this file
 names(dt1)
 
 sel <- c("id", "package_item_A", "package_item_B", "package_item_C", 
-         "registration_REG_clm_start", "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_clm_start",
-         "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_char_yield_pos",
-         "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_char_yield_neg")
+         "registration_REG_clm_start", "post-harvest1(5daysafterharvest)_ASS2e47a9554c06_clm_start",
+         "post-harvest1(5daysafterharvest)_ASS2e47a9554c06_char_yield_pos",
+         "post-harvest1(5daysafterharvest)_ASS2e47a9554c06_char_yield_neg")
 
 
 dt1 <- dt1[,sel]
@@ -100,18 +88,69 @@ names(dt1) <- c("id", paste0("item_", LETTERS[1:3]),
 head(dt1)
 
 # long lat comes from another file
-lonlat <- read.csv("data/raw/Pot21A/Pot21Ageopoints.csv")
+lonlat1 <- read.csv("data/raw/21AIP/Pregistration.csv")
 
-names(lonlat)
+# select package number and longlat
+names(lonlat1)
 
-lonlat <- lonlat[,c("X_longitude", "X_latitude", "householdid")]
+lonlat1 <- lonlat1[,c("Package_no", "location.geopoint")]
 
-names(lonlat) <- c("lon", "lat", "id")
+names(lonlat1) <- c("id", "lonlat")
+
+ll <- lapply(strsplit(lonlat1$lonlat, " "), function(x) {
+  data.frame(lon = x[2], lat = x[1])
+})
+
+ll <- do.call("rbind", ll)
+
+lonlat1 <- cbind(lonlat1, ll)
+
+# the numbers are placed between a : and a - 
+# I'll split this
+id <- gsub("-", ":", lonlat1$id)
+
+id <- unlist(lapply(strsplit(id, ":"), function (x) {x[2]}))
+
+lonlat1$id <- id
 
 
-dt <- merge(dt1, lonlat, by = "id", all.x = TRUE)
+# merge the two files
+dt1 <- merge(dt1, lonlat1[,c("id", "lon", "lat")], by = "id", all.x = TRUE)
 
-head(dt)
+
+# go to the other file
+dt2 <- f[[2]]
+
+names(dt2)
+
+sel <- c("id", "package_item_A", "package_item_B", "package_item_C", 
+         "registration_REG_clm_start", "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_clm_start",
+         "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_char_yield_pos",
+         "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_char_yield_neg")
+
+
+dt2 <- dt2[,sel]
+
+names(dt2) <- c("id", paste0("item_", LETTERS[1:3]), 
+                "start", "end", "yield_pos", "yield_neg")
+
+head(dt2)
+
+# long lat comes from another file
+lonlat2 <- read.csv("data/raw/Pot21A/Pot21Ageopoints.csv")
+
+names(lonlat2)
+
+lonlat2 <- lonlat2[,c("X_longitude", "X_latitude", "householdid")]
+
+names(lonlat2) <- c("lon", "lat", "id")
+
+
+dt2 <- merge(dt2, lonlat2, by = "id", all.x = TRUE)
+
+head(dt2)
+
+dt <- rbind(dt1, dt2)
 
 # filter data to keep only valid rankings
 keep <- apply(dt[c("yield_pos", "yield_neg", "lon", "lat")], 1, function(x) {
@@ -121,7 +160,6 @@ keep <- apply(dt[c("yield_pos", "yield_neg", "lon", "lat")], 1, function(x) {
 keep <- keep == 0
 
 dt <- dt[keep, ]
-
 
 write.csv(dt, "data/potato.csv", row.names = FALSE)
 

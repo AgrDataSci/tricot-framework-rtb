@@ -65,7 +65,7 @@ pld <- cbind(G, covar)
 names(pld)
 
 # fit the pl tree
-tree <- pltree(G ~ DTR + MLWS, 
+tree <- pltree(G ~ MLWS + DTR,
                data = pld, 
                minsize = 5,
                gamma = TRUE,
@@ -74,13 +74,13 @@ tree <- pltree(G ~ DTR + MLWS,
 
 tree
 
-AIC(tree)
+AIC(tree) #565
 
 plot(tree)
 
 summary(tree)
 
-gosset:::plot_tree(tree, qve = FALSE)
+gosset:::plot_tree(tree, ci.level = .9)
 
 ggsave(filename = "output/potato_tree.png",
        plot = last_plot(),
@@ -94,13 +94,15 @@ coef(tree, log = FALSE)
 # as predict is not working I will make a turn around
 # using the coefficients and assigning each of the win probs 
 # to the ndes based on the partykit rules
-rules <- partykit:::.list.rules.party(tree)
+# rules <- partykit:::.list.rules.party(tree)
+# 
+# dt$node <- with(pld,
+#                 ifelse(DTR <= 8 & DTR <= 7 & MLWS <= 32, 4,
+#                        ifelse(DTR <= 8 & DTR <= 7 & MLWS > 32, 5,
+#                               ifelse(DTR <= 8 & DTR > 7, 6, 
+#                                      ifelse(DTR > 8, 7, NA)))))
 
-dt$node <- with(pld,
-                ifelse(DTR <= 8 & DTR <= 7 & MLWS <= 32, 4,
-                       ifelse(DTR <= 8 & DTR <= 7 & MLWS > 32, 5,
-                              ifelse(DTR <= 8 & DTR > 7, 6, 
-                                     ifelse(DTR > 8, 7, NA)))))
+dt$node <- predict(tree, newdata = geoext, type = "node")
 
 table(dt$node)
 
@@ -184,13 +186,14 @@ rainext <- rainfall(coords[,c("x", "y")],
 
 geoext <- cbind(coords, rainext, tempext)
 
+# THIS SHOULD BE DONE BY HAND!!! based in the rules 
+# geoext$node <- with(geoext,
+#                     ifelse(DTR <= 8 & DTR <= 7 & MLWS <= 32, 4,
+#                            ifelse(DTR <= 8 & DTR <= 7 & MLWS > 32, 5,
+#                                   ifelse(DTR <= 8 & DTR > 7, 6, 
+#                                          ifelse(DTR > 8, 7, NA)))))
 
-geoext$node <- with(geoext,
-                    ifelse(DTR <= 8 & DTR <= 7 & MLWS <= 32, 4,
-                           ifelse(DTR <= 8 & DTR <= 7 & MLWS > 32, 5,
-                                  ifelse(DTR <= 8 & DTR > 7, 6, 
-                                         ifelse(DTR > 8, 7, NA)))))
-
+geoext$node <- predict(tree, newdata = geoext, type = "node")
 
 summary(as.factor(geoext$node))
 

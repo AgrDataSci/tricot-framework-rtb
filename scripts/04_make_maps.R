@@ -137,6 +137,7 @@ ggplot() +
         legend.text = element_text(size = 10),
         plot.margin = unit(c(1,1,1,1), "mm"))
 
+potmap
 
 ggsave("output/potato_map.png",
        plot = potmap,
