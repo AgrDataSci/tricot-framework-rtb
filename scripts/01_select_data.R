@@ -74,7 +74,7 @@ dt1 <- f[[1]]
 # select the variables in this file
 names(dt1)
 
-sel <- c("id", "package_item_A", "package_item_B", "package_item_C", 
+sel <- c("id", "package_project_name", "package_item_A", "package_item_B", "package_item_C", 
          "registration_REG_clm_start", "post-harvest1(5daysafterharvest)_ASS2e47a9554c06_clm_start",
          "post-harvest1(5daysafterharvest)_ASS2e47a9554c06_char_yield_pos",
          "post-harvest1(5daysafterharvest)_ASS2e47a9554c06_char_yield_neg")
@@ -82,7 +82,7 @@ sel <- c("id", "package_item_A", "package_item_B", "package_item_C",
 
 dt1 <- dt1[,sel]
 
-names(dt1) <- c("id", paste0("item_", LETTERS[1:3]), 
+names(dt1) <- c("id", "project_name", paste0("item_", LETTERS[1:3]), 
                 "start", "end", "yield_pos", "yield_neg")
 
 head(dt1)
@@ -123,7 +123,7 @@ dt2 <- f[[2]]
 
 names(dt2)
 
-sel <- c("id", "package_item_A", "package_item_B", "package_item_C", 
+sel <- c("id", "package_project_name", "package_item_A", "package_item_B", "package_item_C", 
          "registration_REG_clm_start", "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_clm_start",
          "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_char_yield_pos",
          "post-harvest1(5daysafterharvest)_ASS9d462bb9245b_char_yield_neg")
@@ -131,7 +131,7 @@ sel <- c("id", "package_item_A", "package_item_B", "package_item_C",
 
 dt2 <- dt2[,sel]
 
-names(dt2) <- c("id", paste0("item_", LETTERS[1:3]), 
+names(dt2) <- c("id", "project_name", paste0("item_", LETTERS[1:3]), 
                 "start", "end", "yield_pos", "yield_neg")
 
 head(dt2)

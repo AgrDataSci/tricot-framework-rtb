@@ -80,7 +80,7 @@ plot(tree)
 
 summary(tree)
 
-gosset:::plot_tree(tree, ci.level = .9)
+gosset:::plot_tree(tree, ci.level = .84)
 
 ggsave(filename = "output/potato_tree.png",
        plot = last_plot(),
